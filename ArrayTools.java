@@ -14,10 +14,8 @@ import javax.lang.model.util.ElementScanner6;
 
 public class ArrayTools {
     
-    public static void main(String[] args) {
-              
-    tools(true,null);
-       
+    public static void main(String[] args) {            
+      tools(true,null);
     }
 
    static void tools(boolean myValue , int [] myArr) {
@@ -41,8 +39,7 @@ public class ArrayTools {
             }
     }
 
-    static void cal (int [] myArr)
-    {
+    static void cal (int [] myArr) {
         System.out.println("What do you want to do with this Aray ? Please select option" + '\n' 
         +"1. Reverse Array." + '\n'
         + "2. Average Array."+'\n'
@@ -89,6 +86,22 @@ public class ArrayTools {
                             System.out.println("*****************************************");
                         }
     }   
+  
+    public static String cypher(String message, int offset) {
+        String result = new String();
+        for (char character : message.toCharArray()) {
+            if (character != ' ') {
+                int originalPos = character - 'a';
+                int newPos = (originalPos + offset) % 26;
+                char encryptedChar = (char) ('a' + newPos);
+                result += encryptedChar;
+            } else {
+                result += character;
+            }
+        }
+        return result;
+    }
+
     public static double getAverageFromArray(int[] array) {
         int arrayTotal = 0;
         for (int i = 0; i < array.length; i++) {
@@ -126,6 +139,7 @@ public class ArrayTools {
             }
             return arr;
 }
+  
 static void getConvertmore(int [] myArr) {
     System.out.println('\n' + "=========================================");
     System.out.println("Do you want to countinue with" + '\n' 
